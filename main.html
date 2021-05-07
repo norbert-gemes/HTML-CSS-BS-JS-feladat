@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>Számítások</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="kalkulal.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+</head>
+
+<body>
+
+    <h1> Kerület, Terület/Térfogat, Felszín megoldó oldal
+    </h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-sm-12 col-md-6">
+                <div class="card bg-secondary">
+                    <img class="card-img-top" src="képek/haromszog.jpg" alt="háromszög" style="width: 100%">
+                    <div class="card-body">
+                        <h4 class="card-title text-white">Háromszög</h4>
+                        <hr>
+                        <h6 class="card-title text-white">Képletek:</h6>
+                        <p class="card-text text-white">Kerület: K = a + b + c <br> Terület: T = (a * m) / 2</p>
+                        <hr>
+                        <p class="card-text text-white">Kiszámoló:</p>
+                        <label class="card-text text-white" for="a"> Első oldal (a):</label>
+                        <input type="number" id="a" name="első oldal" size="20" placehorder="A háromszög első oldala" onchange="hsz_kalkulal()"> cm
+                        <label class="card-text text-white" for="b"> Második oldal (b):</label>
+                        <input type="number" id="b" name="első oldal" size="20" placehorder="A háromszög második oldala" onchange="hsz_kalkulal()"> cm
+                        <label class="card-text text-white" for="c"> Harmadik oldal (c):</label>
+                        <input type="number" id="c" name="harmadik  oldal" size="20" placehorder="A háromszög harmadik oldala" onchange="hsz_kalkulal()"> cm
+                        <label class="card-text text-white" for="m">Magasság (m):</label>
+                        <input type="number" id="m" name="magasság" size="20" placehorder="A háromszög magassága" onchange="hsz_kalkulal()"> cm
+                        <hr>
+                        <label class="card-text text-white" for="hkeredmeny">A háromszög Kerülete:</label>
+                        <input type="text" class="form-control" id="hkeredmeny" disabled>
+                        <label class="card-text text-white" for="hteredmeny"> A háromszög Területe:</label>
+                        <input type="text" class="form-control" id="hteredmeny" disabled>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-12 col-md-6">
+                <div class="card bg-secondary">
+                    <img class="card-img-top" src="képek/trapéz.gif" alt="trapéz" style="width: 100%">
+                    <div class="card-body">
+                        <h4 class="card-title text-white">Trapéz</h4>
+                        <hr>
+                        <h6 class="card-title text-white">Képletek:</h6>
+                        <p class="card-text text-white">Kerület: K = a + b + c + d <br> Terület: T = [(a+c) / 2] * m </p>
+                        <hr>
+                        <p class="card-text text-white">Kiszámoló:</p>
+                        <label class="card-text text-white" for="a"> Első oldal (a): </label>
+                        <input type="number" id="aTR" name="első oldal" size="20" placehorder="A trapéz első oldala" onchange="TR_kalkulal()"> cm
+                        <label class="card-text text-white" for="b"> Második oldal (b):</label>
+                        <input type="number" id="bTR" name="első oldal" size="20" placehorder="A trapéz második oldala" onchange="TR_kalkulal()"> cm
+                        <label class="card-text text-white" for="c"> Harmadik oldal (c):</label>
+                        <input type="number" id="cTR" name="harmadik  oldal" size="20" placehorder="A trapéz harmadik oldala" onchange="TR_kalkulal()"> cm
+                        <label class="card-text text-white" for="d">Negyedik oldal (d):</label>
+                        <input type="number" id="d" name="negyedik oldal" size="20" placehorder="A trapéz negyedik oldala" onchange="TR_kalkulal()"> cm
+                        <label class="card-text text-white" for="m">Magasság (m):</label>
+                        <input type="number" id="mTR" name="magasság" size="20" placeholder="A trapéz magassága" onchange="TR_kalkulal()"> cm
+                        <hr>
+                        <label class="card-text text-white" for="TRkeredmeny">A trapéz Kerülete:</label>
+                        <input type="text" class="form-control" id="TRkeredmeny" disabled>
+                        <label class="card-text text-white" for="TRteredmeny"> A trapéz Területe:</label>
+                        <input type="text" class="form-control" id="TRteredmeny" disabled>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-12 col-md-6">
+                <div class="card bg-secondary">
+                    <img class="card-img-top" src="képek/téglatest.png" alt="Téglatest" style="width: 100%">
+                    <div class="card-body">
+                        <h4 class="card-title text-white">Téglatest</h4>
+                        <hr>
+                        <h6 class="card-title text-white">Képletek:</h6>
+                        <p class="card-text text-white">Térfogat: V = a * b* c <br> Felszín: A = 2 * (a * b + a * c + b * c) </p>
+                        <hr>
+                        <p class="card-text text-white">Kiszámoló:</p>
+                        <label class="card-text text-white" for="a"> Első oldal (a): </label>
+                        <input type="number" id="aT" name="első oldal" size="20" placehorder="A téglatest első oldala" onchange="téglatest_kalkulal()"> cm
+                        <label class="card-text text-white" for="b"> Második oldal (b):</label>
+                        <input type="number" id="bT" name="első oldal" size="20" placehorder="A téglatest második oldala" onchange="téglatest_kalkulal()"> cm
+                        <label class="card-text text-white" for="c"> Harmadik oldal (c):</label>
+                        <input type="number" id="cT" name="harmadik  oldal" size="20" placehorder="A téglatest harmadik oldala" onchange="téglatest_kalkulal()"> cm
+                        <hr>
+                        <label class="card-text text-white" for="Tteredmeny">A téglatest Térfogata:</label>
+                        <input type="text" class="form-control" id="Tteredmeny" disabled>
+                        <label class="card-text text-white" for="Tferedmeny"> A téglatest Felszíne:</label>
+                        <input type="text" class="form-control" id="Tferedmeny" disabled>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-12 col-md-6">
+                <div class="card bg-secondary">
+                    <img class="card-img-top" src="képek/kocka.jpg" alt="kocka" style="width: 100%">
+                    <div class="card-body">
+                        <h4 class="card-title text-white">Kocka</h4>
+                        <hr>
+                        <h6 class="card-title text-white">Képletek:</h6>
+                        <p class="card-text text-white">Térfogat: V = a<sup>3</sup> <br> Felszín: A = 6 * a<sup>2</sup> </p>
+                        <hr>
+                        <p class="card-text text-white">Kiszámoló:</p>
+                        <label class="card-text text-white" for="a"> Első oldal (a): </label>
+                        <input type="number" id="aK" name="első oldal" size="20" placehorder="A  első oldala" onchange="kocka_kalkulal()"> cm
+                        <hr>
+                        <label class="card-text text-white" for="Kteredmeny">A kocka Térfogata:</label>
+                        <input type="text" class="form-control" id="Kteredmeny" disabled>
+                        <label class="card-text text-white" for="Kferedmeny"> A kocka Felszíne:</label>
+                        <input type="text" class="form-control" id="Kferedmeny" disabled>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

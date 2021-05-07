@@ -1,0 +1,10 @@
+body {
+  color: white;
+  background-image: url(képek/matek.jpg);
+  background-repeat: round;
+}
+
+h1 {
+  text-align: center;
+  text-decoration: underline;
+}
